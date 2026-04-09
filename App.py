@@ -468,7 +468,7 @@ with tab4:
     styled = display_df.style \
         .format({c: "${:.2f}" for c in ["Open","High","Low","Close","SMA_20","SMA_50","MACD","ATR"]}) \
         .format({"Volume": "{:,.0f}", "RSI": "{:.1f}"}) \
-        .applymap(style_signal, subset=["Signal"])
+        .map(style_signal, subset=["Signal"])
 
     st.dataframe(styled, use_container_width=True, height=500)
 
